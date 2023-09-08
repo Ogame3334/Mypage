@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  server:
+    image: drogonframework/drogon
+    command: /root/mypage/execute.sh
+    container_name: mypage_server
+    volumes:
+      - .:/root/mypage
+    ports:
+      - "49513:49513"
+    env_file:
+      - ./.env
+    networks:
+      - app-net
+  db:
+    image: postgres
+    container_name: mypage_database
+    volumes:
+      - ./postgres/initdb:/docker-entrypoint-initdb.d
+      - dbdata:/var/lib/postgresql/data
+    env_file:
+      - ./.env
+    networks:
+      - app-net
+
+networks:
+  app-net:
+    name: mypage_app_net
+    driver: bridge
+
+volumes:
+  dbdata: null
