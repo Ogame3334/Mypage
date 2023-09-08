@@ -13,7 +13,7 @@ services:
     networks:
       - app-net
     depends_on:
-      db
+      - db
   db:
     image: postgres
     container_name: mypage_database
