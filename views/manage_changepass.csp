@@ -1,0 +1,46 @@
+<%c++ 
+    auto message = @@.get<std::string>("message"); 
+    bool isSucceeded = @@.get<bool>("succeeded");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta charset="UTF-8">
+
+    <title>manage change pass</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="/mypage/medias/icon.webp">
+</head>
+
+<body>
+    <%c++ if(!isSucceeded) { %>
+    <form action="/mypage/manage/changepass" method="post">
+        <p>
+            <label>古いパスワード:</label>
+            <input type="password" name="oldPassWord" placeholder="古いパスワード" />
+        </p>
+        <p>
+            <label>新しいパスワード:</label>
+            <input type="password" name="newPassWord" placeholder="新しいパスワード" />
+        </p>
+        <p>
+            <label>新しいパスワード(確認用):</label>
+            <input type="password" name="newPassWordConfirm" placeholder="新しいパスワード(確認用)" />
+        </p>
+        <p>
+            <button type="submit">変更</button>
+        </p>
+        <p>
+            <label>{% message %}</label>
+        </p>
+    </form>
+    <%c++ } else { %>
+    <p>succeeded!!!</p>
+    <a href="/mypage/manage/top">go to top</a>
+    <%c++ } %>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<%c++ auto isAdded = @@.get<bool>("isAdded"); %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta charset="UTF-8">
+
+    <title>works add</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="/mypage/medias/icon.webp">
+</head>
+
+<body>
+    <%c++ if(!isAdded) { %>
+    <form action="/mypage/manage/works/add" method="post">
+        <p>
+            <label>title:</label>
+            <input type="text" name="title" required />
+        </p>
+        <p>detail<br>
+            <textarea name="detail" cols="30" rows="5"></textarea>
+        </p>
+        <%c++ for(int i = 0; i < 5; i++){ %>
+        <p>
+            <label>media_{% i %}:</label>
+            <input type="file" name="media{% i %}" accept="image/gif, image/jpeg, image/png, image/vnd.microsoft.icon, image/webp, video/mp4, audio/mpeg, audio/wav" />
+        </p>
+        <%c++ }%>
+        <p>
+            <label>github repository:</label>
+            <input type="url" name="github" />
+        </p>
+        <p>
+            <label>zip file:</label>
+            <input type="file" name="zip" accept="application/zip" />
+        </p>
+        <p>
+            <button type="submit">追加</button>
+        </p>
+    </form>
+    <%c++ }else{ %>
+    <p>succeeded!!!</p>
+    <a href="/mypage/manage/top">go to top</a><br>
+    <a href="/mypage/manage/works/add">add again</a>
+    <%c++ } %>
+    <p><a src=".."><< prev</a></p>
+</body>
+</html>
