@@ -21,3 +21,4 @@ jobs:
           script: |
             cd ${{ secrets.SERVER_DEPLOY_DIR }}
             git pull origin main
+            docker compose restart
