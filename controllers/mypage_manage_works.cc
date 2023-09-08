@@ -47,6 +47,7 @@ void works::add( const HttpRequestPtr &req, std::function<void(const HttpRespons
     }
 }
 void works::add_submit( const HttpRequestPtr &req, std::function<void(const HttpResponsePtr &)> &&callback ) const{
+    drogon::MultiPartParser fileParser;
     bool loginState = false;
     auto sessionHolder = req->getSession();
     if(sessionHolder->find("loginState"))
@@ -55,10 +56,17 @@ void works::add_submit( const HttpRequestPtr &req, std::function<void(const Http
     }
     
     if(loginState){
-        std::string title = req->getParameter("title");
-        std::string detail = req->getParameter("detail");
+        // std::string title = req->getParameter("title");
+        // std::string detail = req->getParameter("detail");
+        // std::string media_0 = req->getParameter("media0");
+        std::cout << fileParser.parse(req) << std::endl;
+        auto files = fileParser.getFiles();
+        for(auto file : files){
+            std::cout << "extension: " << file.getFileExtension() << std::endl;
+        }
 
-        std::cout << title << std::endl;
+        // std::cout << title << std::endl;
+        // std::cout << media_0 << std::endl;
 
         auto res = HttpResponse::newRedirectionResponse("/mypage/manage/works/add/succeeded");
 
