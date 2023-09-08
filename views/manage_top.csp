@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <a href="/mypage/manage/works">works</a><br>
-    <a href="/mypage/manage/changepass">change password</a><br>
+    <p><a href="/mypage/manage/works">works</a></p>
+    <p><a href="/mypage/manage/changepass">change password</a></p>
 </body>
 </html>

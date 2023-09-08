@@ -8,28 +8,6 @@ using namespace mypage;
 void manage::manage_direct( const HttpRequestPtr &req, std::function<void(const HttpResponsePtr &)> &&callback) const {
     bool loginState = false;
     auto sessionHolder = req->getSession();
-    sessionHolder->find("loginState");
-    if(sessionHolder->find("loginState"))
-    {
-        loginState = sessionHolder->getOptional<bool>("loginState").value_or(false);
-    }
-
-    if(loginState){
-        auto res = HttpResponse::newRedirectionResponse("/mypage/manage/top");
-        callback(res);
-        return;
-    }
-    else{
-        auto res = HttpResponse::newRedirectionResponse("/mypage/manage/login");
-        req->session()->insert("login_redirect_path", req->getPath());
-        callback(res);
-        return;
-    }
-}
-
-void manage::manage_top( const HttpRequestPtr &req, std::function<void(const HttpResponsePtr &)> &&callback) const {
-    bool loginState = false;
-    auto sessionHolder = req->getSession();
     if(sessionHolder->find("loginState"))
     {
         loginState = sessionHolder->getOptional<bool>("loginState").value_or(false);

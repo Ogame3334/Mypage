@@ -13,7 +13,8 @@
 </head>
 
 <body>
-    <a href="/mypage/manage/works/add">add work</a><br>
-    <a href="/mypage/manage/works/edit">edit work</a>
+    <p><a href="/mypage/manage/works/add">add work</a></p>
+    <p><a href="/mypage/manage/works/edit">edit work</a></p>
+    <p><a href="/mypage/manage"><< prev</a></p>
 </body>
 </html>

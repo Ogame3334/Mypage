@@ -41,11 +41,11 @@
             <button type="submit">追加</button>
         </p>
     </form>
+    <p><a href="/mypage/manage/works"><< prev</a></p>
     <%c++ }else{ %>
     <p>succeeded!!!</p>
     <a href="/mypage/manage/top">go to top</a><br>
     <a href="/mypage/manage/works/add">add again</a>
     <%c++ } %>
-    <p><a src=".."><< prev</a></p>
 </body>
 </html>

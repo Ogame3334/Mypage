@@ -37,10 +37,11 @@
         <p>
             <label>{% message %}</label>
         </p>
+        <p><a href="/mypage/manage"><< prev</a></p>
     </form>
     <%c++ } else { %>
     <p>succeeded!!!</p>
-    <a href="/mypage/manage/top">go to top</a>
+    <a href="/mypage/manage">go to top</a>
     <%c++ } %>
 </body>
 </html>
