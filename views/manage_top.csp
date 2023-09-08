@@ -15,5 +15,6 @@
 <body>
     <p><a href="/mypage/manage/works">works</a></p>
     <p><a href="/mypage/manage/changepass">change password</a></p>
+    hogehoge
 </body>
 </html>
