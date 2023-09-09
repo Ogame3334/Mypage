@@ -4,9 +4,11 @@ cd /root/mypage
  
 DIR="build"
  
-if [ ! -d $DIR ];then
-  mkdir $DIR
+if [ -d $DIR ];then
+  rm -rf $DIR
 fi
+
+mkdir $DIR
 
 cd $DIR
 cmake ..
