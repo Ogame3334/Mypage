@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <p><a href="/manage/works">works</a></p>
-    <p><a href="/manage/changepass">change password</a></p>
+    <p><a href="manage/works">works</a></p>
+    <p><a href="manage/changepass">change password</a></p>
 </body>
 </html>
