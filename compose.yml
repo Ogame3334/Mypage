@@ -6,8 +6,9 @@ services:
     container_name: mypage_server
     volumes:
       - .:/root/mypage
+      - hoge:/root/mypage/build
     ports:
-      - "49513:49513"
+      - "49152:49152"
     env_file:
       - ./.env
     networks:
@@ -32,3 +33,4 @@ networks:
 
 volumes:
   dbdata: null
+  hoge:

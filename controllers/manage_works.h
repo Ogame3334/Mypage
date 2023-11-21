@@ -4,8 +4,6 @@
 
 using namespace drogon;
 
-namespace mypage
-{
 namespace manage
 {
 class works : public drogon::HttpController<works>
@@ -41,5 +39,4 @@ class works : public drogon::HttpController<works>
     enabledExtension({"gif", "png", "jpg", "jpeg", "ico", "webp", "mp4", "mp3", "wav"})
     {}
 };
-}
 }
