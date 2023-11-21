@@ -10,11 +10,11 @@
 
     <title>manage login</title>
     <link rel="icon" href="favicon.ico">
-    <link rel="icon" type="image/png" href="/mypage/medias/icon.webp">
+    <link rel="icon" type="image/png" href="/medias/icon.webp">
 </head>
 
 <body>
-    <form action="/mypage/manage/login" method="post">
+    <form action="/manage/login" method="post">
         <p>
             <label>パスワード:</label>
             <input type="password" name="passWord" placeholder="パスワードを入力してください" />

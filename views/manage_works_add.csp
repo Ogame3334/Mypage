@@ -10,12 +10,12 @@
 
     <title><%c++ if(isAdded){ $$ << "add succeeded"; } else { $$ << "works add"; } %></title>
     <link rel="icon" href="favicon.ico">
-    <link rel="icon" type="image/png" href="/mypage/medias/icon.webp">
+    <link rel="icon" type="image/png" href="/medias/icon.webp">
 </head>
 
 <body>
     <%c++ if(!isAdded) { %>
-    <!--<form action="/mypage/manage/works/add" method="post">
+    <!--<form action="/manage/works/add" method="post">
         <p>
             <label>title:</label>
             <input type="text" name="title" required />
@@ -42,7 +42,7 @@
         </p>
     </form> -->
     <form>
-        <p>
+        <!--<p>
             <label>title:</label>
             <input type="text" name="title" id="title" required />
         </p>
@@ -59,21 +59,23 @@
         <p>
             <label>github repository:</label>
             <input type="url" name="github" id="github" />
-        </p>
+        </p>-->
         <p>
             <label>zip file:</label>
             <input type="file" name="zip" id="zipFile" accept="application/zip" />
+            <span id="progressInformation" ></span>
+            <progress id="progressBar" max="100" />
         </p>
         <p>
             <button type="button" id="postButton">追加</button>
         </p>
     </form>
-    <script type="text/javascript" src="/mypage/scripts/manage/works_add.js"></script>
-    <p><a href="/mypage/manage/works"><< prev</a></p>
+    <script type="text/javascript" src="/scripts/manage/works_add.js"></script>
+    <p><a href="/manage/works"><< prev</a></p>
     <%c++ }else{ %>
     <p>succeeded!!!</p>
-    <a href="/mypage/manage/top">go to top</a><br>
-    <a href="/mypage/manage/works/add">add again</a>
+    <a href="/manage/top">go to top</a><br>
+    <a href="/manage/works/add">add again</a>
     <%c++ } %>
 </body>
 </html>

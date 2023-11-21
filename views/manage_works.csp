@@ -9,12 +9,12 @@
 
     <title>manage top</title>
     <link rel="icon" href="favicon.ico">
-    <link rel="icon" type="image/png" href="/mypage/medias/icon.webp">
+    <link rel="icon" type="image/png" href="/medias/icon.webp">
 </head>
 
 <body>
-    <p><a href="/mypage/manage/works/add">add work</a></p>
-    <p><a href="/mypage/manage/works/edit">edit work</a></p>
-    <p><a href="/mypage/manage"><< prev</a></p>
+    <p><a href="/manage/works/add">add work</a></p>
+    <p><a href="/manage/works/edit">edit work</a></p>
+    <p><a href="/manage"><< prev</a></p>
 </body>
 </html>

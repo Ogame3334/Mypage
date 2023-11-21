@@ -9,11 +9,11 @@
 
     <title>manage top</title>
     <link rel="icon" href="favicon.ico">
-    <link rel="icon" type="image/png" href="/mypage/medias/icon.webp">
+    <link rel="icon" type="image/png" href="/medias/icon.webp">
 </head>
 
 <body>
-    <p><a href="/mypage/manage/works">works</a></p>
-    <p><a href="/mypage/manage/changepass">change password</a></p>
+    <p><a href="/manage/works">works</a></p>
+    <p><a href="/manage/changepass">change password</a></p>
 </body>
 </html>

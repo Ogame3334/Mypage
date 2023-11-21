@@ -1,8 +1,6 @@
-#include "mypage_manage.h"
+#include "manage.h"
 #include "loginUtility.h"
 #include <drogon/HttpClient.h>
-
-using namespace mypage;
 
 // Add definition of your processing function here
 void manage::manage_direct( const HttpRequestPtr &req, std::function<void(const HttpResponsePtr &)> &&callback) const {
@@ -19,7 +17,7 @@ void manage::manage_direct( const HttpRequestPtr &req, std::function<void(const 
         return;
     }
     else{
-        auto res = HttpResponse::newRedirectionResponse("/mypage/manage/login");
+        auto res = HttpResponse::newRedirectionResponse("/manage/login");
         req->session()->insert("login_redirect_path", req->getPath());
         callback(res);
         return;
@@ -90,10 +88,10 @@ void manage::manage_login_submit( const HttpRequestPtr &req, std::function<void(
         sessionHolder->insert("loginState", true);
         if(sessionHolder->find("login_redirect_path"))
         {
-            redirect_path = sessionHolder->getOptional<std::string>("login_redirect_path").value_or("/mypage/manage");
+            redirect_path = sessionHolder->getOptional<std::string>("login_redirect_path").value_or("/manage");
         }
         else{
-            redirect_path = "/mypage/manage";
+            redirect_path = "/manage";
         }
         auto res = HttpResponse::newRedirectionResponse(redirect_path);
         callback(res);
@@ -120,7 +118,7 @@ void manage::manage_changepass( const HttpRequestPtr &req, std::function<void(co
         return;
     }
     else{
-        auto res = HttpResponse::newRedirectionResponse("/mypage/manage/login");
+        auto res = HttpResponse::newRedirectionResponse("/manage/login");
         req->session()->insert("login_redirect_path", req->getPath());
         callback(res);
     }

@@ -1,5 +1,7 @@
 console.log("hi!!");
 
+const progressBar = document.getElementById('progressBar');
+const progressInformation = document.getElementById("progressInformation");
 const button = document.getElementById("postButton");
 button.addEventListener("click", executeUpload);
 const req = new XMLHttpRequest();
@@ -35,7 +37,24 @@ function executeUpload(evt){
     // formData.append("github", github);
     formData.append("zip", zip_file);
 
-    fetch(".", {method: "POST", body: formData});
-    // req.open("POST", "", true);
+    // fetch("./add", {method: "POST", body: formData});
+
+    // req.open("POST", "add", true);
     // req.send(formData);
+
+    const param = {
+        method: "POST",
+        body: formData
+    }
+
+    fetch("./add", param)
+        .then((res)=>{
+            return( res.json() );
+        })
+        .then((json)=>{
+            // 通信が成功した際の処理
+        })
+        .catch((error)=>{
+            // エラー処理
+        });
 }

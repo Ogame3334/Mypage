@@ -4,8 +4,7 @@
 
 using namespace drogon;
 
-namespace mypage
-{
+
 class manage : public drogon::HttpController<manage>
 {
   public:
@@ -36,4 +35,3 @@ class manage : public drogon::HttpController<manage>
 
     void manage_changepass_submit( const HttpRequestPtr &req, std::function<void(const HttpResponsePtr &)> &&callback ) const;
 };
-}

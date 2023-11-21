@@ -13,12 +13,12 @@
 
     <title>manage change pass</title>
     <link rel="icon" href="favicon.ico">
-    <link rel="icon" type="image/png" href="/mypage/medias/icon.webp">
+    <link rel="icon" type="image/png" href="/medias/icon.webp">
 </head>
 
 <body>
     <%c++ if(!isSucceeded) { %>
-    <form action="/mypage/manage/changepass" method="post">
+    <form action="/manage/changepass" method="post">
         <p>
             <label>古いパスワード:</label>
             <input type="password" name="oldPassWord" placeholder="古いパスワード" />
@@ -37,11 +37,11 @@
         <p>
             <label>{% message %}</label>
         </p>
-        <p><a href="/mypage/manage"><< prev</a></p>
+        <p><a href="/manage"><< prev</a></p>
     </form>
     <%c++ } else { %>
     <p>succeeded!!!</p>
-    <a href="/mypage/manage">go to top</a>
+    <a href="/manage">go to top</a>
     <%c++ } %>
 </body>
 </html>
