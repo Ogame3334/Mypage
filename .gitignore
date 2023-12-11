@@ -564,3 +564,5 @@ build/*
 .env
 static_contents/uploads/*
 postgres/initdb/*test*
+
+restart.sh
